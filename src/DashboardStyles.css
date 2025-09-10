@@ -1,0 +1,538 @@
+.navigation-menu {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(255, 255, 255, 0.129);
+    height: 80px;
+    width: 100%;
+}
+
+.log-out-btn {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    padding: 10px;
+    background-color: rgb(203, 9, 9);
+    position: absolute;
+    right: 0;
+    height: 30px;
+    width: 100px;
+}
+
+main {
+    align-items: center;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+}
+
+.nav-div {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: blue;
+    height: 50px;
+    width: 150px;
+}
+
+.logo {
+    color: white;
+    background-color: transparent;
+    font-size: 38px;
+    letter-spacing: 8px;
+}
+
+.add-new-travel {
+    background-color: rgba(255, 255, 255, 0.209);
+    cursor: pointer;
+    color: white;
+    font-size: 34px;
+    height: 55px;
+    width: 55px;
+    border-radius: 100px;
+    padding: 5px;
+}
+
+
+.profile {
+    background-color: rgba(255, 255, 255, 0.209);
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+
+
+/* profile styles */
+
+.avatar {
+    border-radius: 100px;
+    cursor: pointer;
+    height: 140px;
+    margin-top: 20px;
+    width: 140px;
+}
+
+.avatar > img {
+    border-radius: 100px;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+
+.profile-window {
+    align-items: center;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    
+    background-color: rgba(255, 255, 255, 0.769);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    height: 100%;
+    right: 30px;
+    top: 150px;
+    width: 100%;
+}
+
+.profile-slide {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 100px;
+  right: 0;
+  height: 80%;
+  width: 350px;
+  background-color: transparent;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.profile-slide.open {
+    transform: translateX(0);
+}
+
+
+.head-section {
+    height: 560px;
+    width: 100%;
+}
+
+.travel-list {
+    border-left: solid 3px rgba(0, 0, 0, 0.155);
+    border-right: solid 3px rgba(0, 0, 0, 0.155);
+    background-color: transparent;
+    box-shadow: rgba(7, 7, 100, 0.336) 0px 6px 12px -2px, rgba(0, 0, 0, 0) 0px 3px 7px -3px;
+    height: 600px;
+    position: relative;
+    left: -10px;
+    top: -23px;
+    width: 240px;
+}
+
+.my-travel {
+    height: 500px;
+    width: 400px;
+}
+
+
+
+.add-travel-form {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    background-color: rgba(34, 80, 132, 0.573);
+    border-radius: 30px;
+    height: 250px;
+    width: 500px;
+    top: 25%;
+    position: absolute;
+}
+
+#close {
+    background-color: red;
+    height: 30px;
+    position: absolute;
+    right: -40px;
+    top: -40px;
+    padding: 0;
+    width: 30px;
+}
+
+#travel-input {
+    height: 10px;
+    width: 270px;
+}
+
+#add-travel-to-list {
+    background-color: rgb(31, 140, 31);
+    position: absolute;
+    bottom: -40px;
+    width: 250px;
+}
+
+.add-travel-form-slide {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 100px;
+  right: 0;
+  height: 80%;
+  width: 350px;
+  background-color: transparent;
+  transform: translate(-35vw, 105vh);
+  transition: transform 1s ease-in-out;
+  z-index: 999;
+}
+
+.add-travel-form-slide.open {
+    transform: translate(-36vw, -10vh); 
+}
+
+.modal-background {
+    background-color: rgba(0, 0, 0, 0.507);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    padding: 40px;
+    position: absolute;
+    width: 100vw;
+}
+
+
+
+
+ul {
+    padding: 5px;
+    max-width: 100%;
+    margin-inline: auto;
+}
+
+li {
+    list-style: none;
+    padding: 10px 15px;
+    margin-bottom: 12px;
+    background-color: #212043fd;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+li:hover {
+    background-color: #04ca71bd;
+    transform: translateX(4px);
+    cursor: pointer;
+}
+
+h2 {
+    color: #032d56;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+
+.travel-details {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: transparent;
+    box-shadow: rgba(7, 7, 100, 0.336) 0px 6px 12px -2px, rgba(0, 0, 0, 0) 0px 3px 7px -3px;
+    height: 100%;
+    width: 900px;
+    position: absolute;
+    top: 80px;
+    right: 0;
+}
+
+
+.travel-info {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 150px;
+}
+
+
+
+h3 {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    letter-spacing: 4px;
+}
+
+.clock-progress-bar {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.date-clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: linear-gradient(135deg, #307791 60%, #594378 100%);
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    font-size: 22px;
+    font-weight: 600;
+    box-shadow: 0 4px 18px rgba(55,122,153,0.13);
+    cursor: pointer;
+    transition: all 0.2s, box-shadow 0.2s, transform 0.15s;
+    margin-bottom: 24px;
+    border: 3px solid #fff;
+    text-align: center;
+    user-select: none;
+}
+
+.date-clock:hover {
+    background: linear-gradient(135deg, #3F3152 60%, #37a4cc 100%);
+    box-shadow: 0 8px 24px rgba(55,122,153,0.18);
+    transform: scale(1.04);
+}
+
+.progress-content {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 20px;
+  width: 500px;
+  margin: 20px auto;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.progress-text {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.progress-bar {
+  width: 90%;
+  height: 25px;
+  background-color: #1e1e1e;
+  margin: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #444;
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.2);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00d65a, #5cd114);
+  transition: width 0.6s ease;
+}
+
+
+.to-do-list {
+    box-shadow: 0 4px 18px rgba(55,122,153,0.10);
+    border-radius: 18px;
+    background: rgba(255,255,255,0.13);
+    width: 100%;
+    min-height: 260px;
+    margin-top: 60px;
+    padding: 28px 0 18px 0;
+    position: relative;
+    width: 100%;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #37a4cc #f7fafd;
+}
+
+
+.to-do-list input[type="text"] {
+    width: 70%;
+    margin: 0 auto 18px auto;
+    display: block;
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: 1.5px solid #37a4cc;
+    font-size: 16px;
+    background: #f7fafd;
+    color: #222;
+    box-shadow: 0 1px 4px rgba(55,122,153,0.07);
+    transition: border 0.2s, box-shadow 0.2s;
+    margin-right: 320px;
+}
+
+.to-do-list input[type="text"]:focus {
+    border: 2px solid #3F3152;
+    box-shadow: 0 2px 8px rgba(55,122,153,0.13);
+    outline: none;
+}
+
+
+.to-do-list ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 24px;
+    padding: 0 12px;
+    list-style: none;
+}
+
+
+.to-do-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 8px 18px;
+    box-shadow: 0 2px 8px rgba(55,122,153,0.10);
+    font-size: 16px;
+    color: #222;
+    min-width: 180px;
+    max-width: 320px;
+    transition: box-shadow 0.2s, background 0.2s;
+    cursor: pointer;
+}
+
+.to-do-list li:hover {
+    background: #e3f7fa;
+    box-shadow: 0 4px 16px rgba(55,122,153,0.16);
+}
+
+.to-do-list input[type="checkbox"] {
+    accent-color: #37a4cc;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.to-do-list span {
+    transition: color 0.2s, text-decoration 0.2s;
+}
+
+.to-do-list input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+
+.budget-buttons {
+    align-items: center;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 18px;
+    margin-top: 8px;
+    margin: auto;
+    margin-top: 30px;
+    width: 420px;
+}
+
+
+.input-budget {
+    border: 2px solid #37a4cc;
+    border-radius: 8px;
+    font-size: 17px;
+    padding: 8px 16px;
+    width: 180px;
+    outline: none;
+    background: #f7fafd;
+    color: #222;
+    transition: border 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(55,122,153,0.07);
+}
+
+.input-budget:focus {
+    border: 2px solid #3F3152;
+    box-shadow: 0 2px 8px rgba(55,122,153,0.13);
+}
+
+
+.save-budget-btn {
+    background: linear-gradient(90deg, #377A99 40%, #3F3152 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    padding: 8px 24px;
+    margin-top: 0;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(55, 122, 153, 0.10);
+    transition: background 0.2s, transform 0.1s;
+}
+
+.save-budget-btn:hover {
+    background: linear-gradient(90deg, #3F3152 40%, #377A99 100%);
+    transform: translateY(-2px) scale(1.04);
+}
+
+
+
+/* weather styles */
+
+.weather {
+    border-radius: 20px;
+    width: 600px;
+    height: 160px;
+    background: linear-gradient(135deg, #307791 60%, #594378 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.weather-info {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    height: 120px;
+    width: 100%;
+}
+
+.weather-details {
+    align-items: center;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    text-align: center;
+
+    font-size: 15px;
+    font-weight: bold;
+    height: 100%;
+    width: 110px;
+}
+
+.weather-details > img {
+    width: 33px;
+    height: 33px;
+    object-fit: cover;
+}

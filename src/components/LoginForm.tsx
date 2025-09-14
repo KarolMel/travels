@@ -24,6 +24,13 @@ function LoginForm() {
             const data = await response.json();
 
             if (response.ok) {
+               //* { New Code fetchMessage }*//
+               const token = data.token;
+               
+               const message = await fetch(`http://localhost:5000/message?token=${token}`);
+               const messageData = await message.text();
+               alert(messageData);
+              //* { New Code fetchMessage }*//
 
                 login(data.user);
                 setErrorMsg('');

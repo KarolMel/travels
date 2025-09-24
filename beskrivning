@@ -1,0 +1,62 @@
+Den nya koden som jag har lagt till finns mellan kommentarerna {/* New code */ } så att
+du lättare kan hitta de delar som jag har ändrat. Jag börjar med att gå igenom vad jag har
+implementerat i mitt projekt från uppgiften Lägg till en stad: Del 2.
+
+Lägg till en stad: Del 2
+Jag skapade ett interface med typerna id, name och population för att specificera hur
+strukturen för ett stadobjekt ska se ut.
+Sen skapade jag en GET-rutt med endpointen /cities så att frontend kan få tillgång till
+backend.
+I frontend la jag till en fetch som går till backend och hämtar endpointen /cities. Jag la
+också till en useState som använder interfacet från backend som typ. I promisen
+tilldelas datan från data till konstanten cities.
+Sedan skapade jag en table med HTML-taggar där stadens namn och befolkning
+kommer att visas. Jag skapade en map metod som itererar över array cities. Funktionen
+tar ett argument city, som är ett enskilt stad objekt. city kommer från att det är varje
+element i array cities - alltså ett objekt av typen City som innehåller egenskaperna id,
+name och population
+interface City {
+id: string;
+name: string;
+population: number;
+}
+<tbody>
+{cities.map((city: City) => (
+<tr key={city.id}>
+<td onClick={() => {clickOnCity(city)}} style={{cursor:
+'pointer'}}>{city.name}</td>
+<td onClick={() => {clickOnPopulation(city)}} style={{cursor:
+'pointer'}} >{city.population}</td>
+</tr>
+))}
+</tbody>
+Byt ut en stad
+I backend skapade jag en POST-rutt med endpointen /cities. Inuti används
+destrukturering
+const { name, population } = req.body;
+för att ta emot data från frontend, vilket tilldelar variablerna name och population de
+värden som skickas från frontend via JSON
+body: JSON.stringify({ name: cityInput, population: populationInput})
+Det är alltså de värden som användaren skriver in i input fälten som hamnar i
+variablerna name och population, och som sedan kan läggas till i array med stad objekt.
+Jag skapar ett nytt objekt newCity med typen City. Id genereras med uuidv4() för att
+skapa ett unik ID för staden, och name samt population är de data som skickas från
+frontend.
+const newCity: City = {
+id: uuidv4(),
+name,
+population
+};
+Sedan används cities.push(newCity)
+cities.push(newCity);
+för att lägga till det nya stad objekt i array med alla städer. Efter att staden har lagts till
+skickar backend tillbacka objektet till frontend med en statuskod 201, och visar data på
+sidan
+
+Skicka meddelanden
+Jag skapade en enkel token i endpointen /login som genereras varje gång en användare
+loggar in. I middleware authenticate kontrollerar jag om token är giltig, och om den är,
+det sätts req.user så att backend kan se vem som är inloggad. Endpointen /message
+använder middleware och retunerar ett välkomstmeddelande för den inloggade
+användaren. I loginForm fetchar jag /message och sparar jag token i localStorage och
+visar välkomstmeddelandet i en alert.
